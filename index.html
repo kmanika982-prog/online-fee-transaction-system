@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Fee Transaction System - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-card">
+
+            <!-- Bank Icon -->
+            <div class="bank-icon">🏛️</div>
+
+            <!-- Title -->
+            <h1>
+                Online Fee<br>
+                Transaction System
+            </h1>
+
+            <!-- Subtitle -->
+            <h2>Student Login</h2>
+
+            <form action="backend/login.php" method="POST">
+
+                <!-- Student ID / Email -->
+                <div class="input-box">
+
+                    <span class="input-icon">👤</span>
+
+                    <input
+                        type="text"
+                        id="student_id"
+                        name="student_id"
+                        placeholder="Student ID / Email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-box">
+
+                    <span class="input-icon">🔒</span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter Password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Show Password -->
+                <div class="show-password">
+                    <button
+                        type="button"
+                        onclick="togglePassword()"
+                        id="showBtn"
+                    >
+                        Show
+                    </button>
+                </div>
+
+
+                <!-- Forgot Password -->
+                <div class="forgot-password">
+                    <a href="forgot-password.php">
+                        Forgot Password?
+                    </a>
+                </div>
+
+
+                <!-- Login -->
+                <button type="submit" class="login-btn">
+                    Login
+                </button>
+
+            </form>
+
+
+            <!-- Register -->
+            <div class="register-text">
+                Don't have an account?
+                <a href="register.php">Register</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Show / Hide Password -->
+    <script>
+        function togglePassword() {
+
+            const password = document.getElementById("password");
+            const showBtn = document.getElementById("showBtn");
+
+            if (password.type === "password") {
+
+                password.type = "text";
+                showBtn.textContent = "Hide";
+
+            } else {
+
+                password.type = "password";
+                showBtn.textContent = "Show";
+
+            }
+        }
+    </script>
+
+</body>
+</html>
